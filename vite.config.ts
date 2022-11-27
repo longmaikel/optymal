@@ -7,6 +7,9 @@ const path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    sourcemap: !process.env.PROD,
+  },
   plugins: [
     vue(),
     // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
@@ -18,6 +21,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+      "@Assets": path.resolve(__dirname, "src/assets"),
+      "@Views": path.resolve(__dirname, "src/views"),
+      "@Components": path.resolve(__dirname, "src/components"),
     },
   },
   /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
