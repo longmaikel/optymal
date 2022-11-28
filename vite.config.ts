@@ -24,6 +24,7 @@ export default defineConfig({
       "@Assets": path.resolve(__dirname, "src/assets"),
       "@Views": path.resolve(__dirname, "src/views"),
       "@Components": path.resolve(__dirname, "src/components"),
+      "@Models": path.resolve(__dirname, "src/models"),
     },
   },
   /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
