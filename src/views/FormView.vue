@@ -8,18 +8,18 @@
     </v-col>
   </v-row>
   <v-form>
-    <v-row class="mt-10">
-      <v-col cols="2"></v-col>
-      <v-col cols="4">
-        <v-select
-          label="Sposób określania zdarzeń"
-          :items="['Czynność poprzedzająca', 'Następstwo zdarzeń']"
-          variant="outlined"
-          v-model="strategy"
-          :disabled="true"
-        ></v-select>
-      </v-col>
-    </v-row>
+    <!--    <v-row class="mt-10">-->
+    <!--      <v-col cols="2"></v-col>-->
+    <!--      <v-col cols="4">-->
+    <!--        <v-select-->
+    <!--          label="Sposób określania zdarzeń"-->
+    <!--          :items="['Czynność poprzedzająca', 'Następstwo zdarzeń']"-->
+    <!--          variant="outlined"-->
+    <!--          v-model="strategy"-->
+    <!--          :disabled="true"-->
+    <!--        ></v-select>-->
+    <!--      </v-col>-->
+    <!--    </v-row>-->
     <v-row v-for="(activity, key) in activities" :key="key">
       <v-spacer />
       <v-col cols="8" class="d-flex">
@@ -37,15 +37,12 @@
           class="mx-4"
           :disabled="inputDisabled"
         ></v-text-field>
-        <v-select
+        <v-text-field
           v-model="activity.connections"
           :label="strategyInputLabel"
-          multiple
-          :items="getAvailableConnections(activity.name)"
-          :readonly="!getAvailableConnections(activity.name).length"
           variant="outlined"
           :disabled="inputDisabled"
-        ></v-select>
+        ></v-text-field>
       </v-col>
       <v-spacer />
     </v-row>
@@ -54,11 +51,27 @@
       <v-col cols="8" class="d-flex justify-end">
         <v-btn
           color="primary"
-          size="large"
+          size="small"
           @click="addActivity"
           :disabled="addActivityBtnDisabled"
           >Dodaj zdarzenie</v-btn
         >
+      </v-col>
+      <v-spacer />
+    </v-row>
+    <v-row class="mt-8">
+      <v-spacer />
+      <v-col cols="6">
+        <v-btn
+          color="primary"
+          size="x-large"
+          block
+          :disabled="false"
+          router
+          to="/visualization"
+        >
+          Przelicz
+        </v-btn>
       </v-col>
       <v-spacer />
     </v-row>
@@ -104,11 +117,9 @@ export default defineComponent({
     addActivity() {
       this.$store.commit("ADD_DUMMY_ACTIVITY");
     },
-    getAvailableConnections(letter) {
-      return this.activities
-        .filter((a) => a.name !== letter)
-        .map((a) => a.name);
-    },
+  },
+  mounted() {
+    this.$store.commit("CLEAR_ACTIVITIES");
   },
 });
 </script>
