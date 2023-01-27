@@ -25,7 +25,7 @@
       <v-col cols="8" class="d-flex">
         <v-text-field
           v-model="activity.name"
-          label="Zdarzenie"
+          label="Czynność"
           variant="outlined"
           readonly
           :disabled="inputDisabled"
@@ -54,7 +54,7 @@
           size="small"
           @click="addActivity"
           :disabled="addActivityBtnDisabled"
-          >Dodaj zdarzenie</v-btn
+          >Dodaj czynność</v-btn
         >
       </v-col>
       <v-spacer />
@@ -70,7 +70,7 @@
           router
           to="/visualization"
         >
-          Przelicz
+          Wykonaj sieć
         </v-btn>
       </v-col>
       <v-spacer />
