@@ -55,27 +55,8 @@ class Network {
       nodes: this.nodes,
       edges: this.edges,
     };
-    // debugger;
     const network = new NetworkCore(this.container, data, options);
   }
-
-  // private calculateASAP() {
-  //
-  //   const asap = this.calculator.calculateShortestPath(
-  //     this.nodes[0].id.toString(),
-  //     this.nodes[this.nodes.length - 1].id.toString()
-  //   );
-  //   console.log('asap', asap);
-  //   asap.forEach(node => {
-  //     this.nodes.map(n => {
-  //       if (n.id == node) {
-  //         n.color = {color: 'red'};
-  //       }
-  //       return n;
-  //     });
-  //   });
-  //
-  // }
 
   private renderNodeSVG(nodeNumber, asap, alap, diff) {
     const svg = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">

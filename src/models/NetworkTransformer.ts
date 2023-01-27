@@ -28,7 +28,6 @@ class NetworkTransformer {
     this.moveBackward();
     this.findCriticalPath();
     this.calculateTimeForNodes();
-    // debugger;
     console.log("nodes", this.nodes);
     console.log("egdes", this.edges);
   }
@@ -97,7 +96,6 @@ class NetworkTransformer {
       if (i == lastId) {
         this.edges.forEach((edge) => {
           if (edge.to == i) {
-            // debugger;
             edge.lf = this.T;
             edge.ls = edge.lf - edge.time;
           }
@@ -117,7 +115,6 @@ class NetworkTransformer {
       }
     }
 
-    // calculate diff
     this.edges.forEach((edge) => {
       edge.diff = edge.ls - edge.es;
     });
@@ -130,7 +127,6 @@ class NetworkTransformer {
         edge.color = { color: "red" };
       }
     });
-    // debugger;
   }
 
   private calculateTimeForNodes() {
