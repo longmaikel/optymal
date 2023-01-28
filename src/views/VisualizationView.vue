@@ -13,7 +13,7 @@
     <v-spacer />
     <v-col cols="6">
       <v-btn
-        color="primary"
+        color="#9fcaf4"
         size="x-large"
         block
         :disabled="false"

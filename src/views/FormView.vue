@@ -50,7 +50,7 @@
       <v-spacer />
       <v-col cols="8" class="d-flex justify-end">
         <v-btn
-          color="primary"
+          color="#9fcaf4"
           size="small"
           @click="addActivity"
           :disabled="addActivityBtnDisabled"
@@ -63,7 +63,7 @@
       <v-spacer />
       <v-col cols="6">
         <v-btn
-          color="primary"
+          color="#9fcaf4"
           size="x-large"
           block
           :disabled="false"

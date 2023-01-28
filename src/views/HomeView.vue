@@ -5,15 +5,17 @@
     </v-col>
 
     <v-col cols="12" class="mb-4">
-      <h1 class="display-2 font-weight-bold mb-3">LOG</h1>
+      <h1 class="display-2 font-weight-bold mb-3">
+        <span class="boil">BOIL</span>ING POT
+      </h1>
 
       <p class="subheading font-weight-regular">
-        Aplikacja do wizualizacji metody CMP i rysowania ścieżek krytycznych
+        Aplikacja do wizualizacji metody CMP.
       </p>
     </v-col>
 
     <v-col cols="12">
-      <v-btn size="x-large" color="primary" router to="/form">
+      <v-btn size="x-large" color="#9fcaf4" router to="/form">
         Rozpocznij
       </v-btn>
     </v-col>
@@ -22,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import logo from "@Assets/logo.svg";
+import logo from "@Assets/cooking-pot.png";
 
 export default defineComponent({
   name: "HomeView",
@@ -33,3 +35,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.boil {
+  color: #fc8d94;
+}
+</style>
